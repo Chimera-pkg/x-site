@@ -2,19 +2,17 @@
   overflow: hidden;
 }
 
-.main-container,
-.main-container * {
-  box-sizing: border-box;
-}
-
 .main-container {
+  overflow: hidden;
   position: relative;
-  width: 360px;
-  height: 800px;
+  width: 100%; /* Use percentage for responsiveness */
+  max-width: 360px; /* Set a maximum width to avoid it becoming too wide on larger screens */
   margin: 0 auto;
   background: rgb(250, 250, 250);
   overflow: hidden;
 }
+
+
 .box {
   position: relative;
   width: 360px;

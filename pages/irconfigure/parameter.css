@@ -9,8 +9,8 @@
   
   .main-container {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 275px;
     margin: 0 auto;
   }
   .wrapper {
@@ -142,7 +142,7 @@
     width: 243px;
     height: 30px;
     margin: 33px 0 0 0;
-    background: url(../assets/images/submit.png)
+    background: url(/assets/images/miniheader.png)
       no-repeat center;
     background-size: cover;
     z-index: 17;
