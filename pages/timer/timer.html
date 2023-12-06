@@ -1,53 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700&display=swap" />
-    <link rel="stylesheet" href="timer.css" />
-  </head>
-  <body>
-    <div class="main-container">
-      <div class="wrapper">
-        <div class="wrapper-2"></div>
-        <div class="pic"></div>
-        <div class="box"><div class="img"></div></div>
-        <div class="group"><div class="pic-2"></div></div>
-        <div class="section"><div class="pic-3"></div></div>
-        <div class="group-2"><div class="pic-4"></div></div>
-        <div class="section-2"><div class="pic-5"></div></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700&display=swap" />
+  <link rel="stylesheet" href="timer.css" />
+  <style>
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed
+      ;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background: #fff;
+      width: 300px;
+      padding: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: center;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+    }
+  </style>
+  <script>
+    // Function to open the modal
+    function openModal() {
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Temukan elemen dengan class "text-2"
+      var acButton = document.querySelector('.text-2');
+
+      // Tambahkan event listener untuk menangani klik
+      acButton.addEventListener('click', function () {
+        // Tampilkan modal
+        openModal();
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+
+  <div class="main-container">
+      <!-- Modal Popup -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Select a Time</h2>
+    <form action="/action_page.php" id="ac-form">
+      <label for="appt">Select a time:</label>
+      <input type="time" id="appt" name="appt">
+      <input type="submit">
+    </form>
+  </div>
+</div>
+<!-- end modal pop -->
+    <div class="wrapper">
+      <div class="wrapper-2"></div>
+      <div class="pic"></div>
+      <div class="box">
+        <div class="img"></div>
       </div>
-      <div class="group-3">
-        <a href="javascript:history.back()">
+      <div class="group">
+        <div class="pic-2"></div>
+      </div>
+      <div class="section">
+        <div class="pic-3"></div>
+      </div>
+      <div class="group-2">
+        <div class="pic-4"></div>
+      </div>
+      <div class="section-2">
+        <div class="pic-5"></div>
+      </div>
+    </div>
+    <div class="group-3">
+      <a href="javascript:history.back()"></a>
         <div class="pic-6"></div>
         <a href=""></a>
         <span class="text">Timer</span>
-      </div>
-      <div class="wrapper-3">
-        <div class="img-2"></div>
-        <div class="pic-7"></div>
-      </div>
-      <div class="wrapper-4">
-        <span class="text-2">Air Conditioner 1</span
-        ><span class="text-3">Air Conditioner 2</span>
-      </div>
-      <div class="box-2">
-        <div class="wrapper-5"></div>
-        <span class="text-4"></span><span class="text-5">Exhaust</span>
-      </div>
-      <div class="section-3">
-        <span class="text-6">Top Temperature </span>
-        <div class="group-4"></div>
-      </div>
-      <div class="group-5">
-        <span class="text-7">Base Temperature </span>
-        <div class="section-4"></div>
-      </div>
-      <span class="text-8">© X-CAMP 2023</span>
-      <div class="pic-8"></div>
-      <div class="box-3"></div>
-      <div class="group-6"></div>
     </div>
-  </body>
+    <div class="wrapper-3">
+      <div class="img-2"></div>
+      <div class="pic-7"></div>
+    </div>
+    <div class="wrapper-4">
+      <span class="text-2" onclick="showForm()">Air Conditioner 1</span>
+      <span class="text-3">Air Conditioner 2</span>
+    </div>
+    <div class="box-2">
+      <div class="wrapper-5"></div>
+      <span class="text-4"></span><span class="text-5">Exhaust</span>
+    </div>
+    <div class="section-3">
+      <span class="text-6">Top Temperature </span>
+      <div class="group-4"></div>
+    </div>
+    <div class="group-5">
+      <span class="text-7">Base Temperature </span>
+      <div class="section-4"></div>
+    </div>
+    <span class="text-8">© X-CAMP 2023</span>
+    <div class="pic-8"></div>
+    <div class="box-3"></div>
+    <div class="group-6"></div>
+
+</body>
+
 </html>

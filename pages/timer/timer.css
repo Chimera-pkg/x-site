@@ -1,7 +1,7 @@
 .main-container {
     overflow: hidden;
   }
-  
+
   .main-container,
   .main-container * {
     box-sizing: border-box;

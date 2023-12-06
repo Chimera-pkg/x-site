@@ -28,6 +28,10 @@ function showPopup() {
   var popup = document.getElementById("myPopup");
   popup.style.display = "block";
 }
+function showPopupTemp() {
+  var popup = document.getElementById("");
+  popup.style.display = "block";
+}
 
 // Fungsi untuk menyembunyikan popup
 function hidePopup() {
@@ -58,7 +62,7 @@ function hidePopup() {
         <div class="wrapper-4"></div>
         <span class="text-2">Air Conditioner 1</span>
         <span class="text-3" onclick="showPopup()">ON</span>
-        <span class="text-4">OFF</span>
+        <span class="text-4" onclick="showPoptemp()">OFF</span>
         <!-- isi Pop up -->
         <div id="myPopup" class="popup">
           <head>
@@ -82,72 +86,76 @@ function hidePopup() {
             <option value="3">3</option>
           </select>
           <div>
-            <button onclick="hidePopup()">Tutup</button>
+            <button onclick="hidePopup()">Scan</button>
           </div>
-        </body>
         </div>
+        </body>
+        <!-- end of pop up -->
         <div class="pic-4"></div>
         <div class="pic-5"></div>
         <div class="pic-6"></div>
+        <!-- pop up suhu -->
+        
+        <!-- end off pop up suhu  -->
         <div class="group-4">
-          <span class="text-5">16°C</span>
+          <span class="text-5"onclick="showPopup()">16°C</span>
         </div>
         <div class="section">
-          <span class="text-8">17°C</span>
+          <span class="text-8"onclick="showPopup()">17°C</span>
         </div>
         <div class="group-5">
-          <span class="text-b">18°C</span>
+          <span class="text-b"onclick="showPopup()">18°C</span>
         </div>
         <div class="img-5"></div>
         <div class="img-6"></div>
         <div class="pic-7"></div>
         <div class="wrapper-5">
-          <span class="text-e">19°C</span>
+          <span class="text-e"onclick="showPopup()">19°C</span>
         </div>
         <div class="group-6">
-          <span class="text-11">20°C</span>
+          <span class="text-11"onclick="showPopup()">20°C</span>
         </div>
         <div class="wrapper-6">
-          <span class="text-14">21°C</span>
+          <span class="text-14"onclick="showPopup()">21°C</span>
         </div>
         <div class="img-7"></div>
         <div class="pic-8"></div>
         <div class="pic-9"></div>
         <div class="group-7">
-          <span class="text-17">23°C</span>
+          <span class="text-17"onclick="showPopup()">23°C</span>
         </div>
         <div class="group-8">
-          <span class="text-1a">22°C</span>
+          <span class="text-1a"onclick="showPopup()">22°C</span>
         </div>
         <div class="wrapper-7">
-          <span class="text-1d">24°C</span>
+          <span class="text-1d"onclick="showPopup()">24°C</span>
         </div>
         <div class="wrapper-8">
-          <span class="text-20">16°C</span>
+          <span class="text-20"onclick="showPopup()">16°C</span>
         </div>
         <div class="img-8"></div>
         <div class="img-9"></div>
         <div class="img-a"></div>
         <div class="group-9">
-          <span class="text-23">26°C</span>
+          <span class="text-23"onclick="showPopup()">26°C</span>
         </div>
         <div class="group-a">
-          <span class="text-26">25°C</span>
+          <span class="text-26"onclick="showPopup()">25°C</span>
         </div>
         <div class="box-4">
-          <span class="text-29">27°C</span>
+          <span class="text-29"onclick="showPopup()">27°C</span>
         </div>
         <div class="img-b"></div>
         <div class="img-c"></div>
         <div class="img-d"></div>
         <div class="box-5">
-          <span class="text-2c">28°C</span>
+          <span class="text-2c"onclick="showPopup()">28°C</span>
         </div>
         <div class="group-b">
-          <span class="text-2f">29°C</span>
+          <span class="text-2f"onclick="showPopup()">29°C</span>
         </div>
         <div class="section-2">
-          <span class="text-32">30°C</span>
+          <span class="text-32"onclick="showPopup()">30°C</span>
         </div>
         <span class="text-35">© X-CAMP 2023</span>
       </div>
