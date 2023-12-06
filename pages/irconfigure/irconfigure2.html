@@ -21,6 +21,17 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         z-index: 1000;
       }
+      .temp {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 80px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
     </style>
     <script>
       // script.js
@@ -28,8 +39,8 @@ function showPopup() {
   var popup = document.getElementById("myPopup");
   popup.style.display = "block";
 }
-function showPopupTemp() {
-  var popup = document.getElementById("");
+function showTemp() {
+  var popup = document.getElementById("myTemp");
   popup.style.display = "block";
 }
 
@@ -38,9 +49,14 @@ function hidePopup() {
   var popup = document.getElementById("myPopup");
   popup.style.display = "none";
 }
+function hideTemp() {
+  var temp = document.getElementById("myTemp");
+  temp  .style.display = "none";
+}
 
     </script>
   </head>
+  
   <body>
     <div class="main-container">
       <div class="box">
@@ -62,7 +78,7 @@ function hidePopup() {
         <div class="wrapper-4"></div>
         <span class="text-2">Air Conditioner 2</span>
         <span class="text-3" onclick="showPopup()">ON</span>
-        <span class="text-4" onclick="showPoptemp()">OFF</span>
+        <span class="text-4" onclick="showPopup()">OFF</span>
         <!-- isi Pop up -->
         <div id="myPopup" class="popup">
           <head>
@@ -94,68 +110,66 @@ function hidePopup() {
         <div class="pic-4"></div>
         <div class="pic-5"></div>
         <div class="pic-6"></div>
-        <!-- pop up suhu -->
-        
-        <!-- end off pop up suhu  -->
+      
         <div class="group-4">
-          <span class="text-5"onclick="showPopup()">16°C</span>
+          <span class="text-5"onclick="showTemp()">16°C</span>
         </div>
         <div class="section">
-          <span class="text-8"onclick="showPopup()">17°C</span>
+          <span class="text-8"onclick="showTemp()">17°C</span>
         </div>
         <div class="group-5">
-          <span class="text-b"onclick="showPopup()">18°C</span>
+          <span class="text-b"onclick="showTemp()">18°C</span>
         </div>
         <div class="img-5"></div>
         <div class="img-6"></div>
         <div class="pic-7"></div>
         <div class="wrapper-5">
-          <span class="text-e"onclick="showPopup()">19°C</span>
+          <span class="text-e"onclick="showTemp()">19°C</span>
         </div>
         <div class="group-6">
-          <span class="text-11"onclick="showPopup()">20°C</span>
+          <span class="text-11"onclick="showTemp()">20°C</span>
         </div>
         <div class="wrapper-6">
-          <span class="text-14"onclick="showPopup()">21°C</span>
+          <span class="text-14"onclick="showTemp()">21°C</span>
         </div>
         <div class="img-7"></div>
         <div class="pic-8"></div>
         <div class="pic-9"></div>
         <div class="group-7">
-          <span class="text-17"onclick="showPopup()">23°C</span>
+          <span class="text-17"onclick="showTemp()">23°C</span>
         </div>
         <div class="group-8">
-          <span class="text-1a"onclick="showPopup()">22°C</span>
+          <span class="text-1a"onclick="showTemp()">22°C</span>
         </div>
         <div class="wrapper-7">
-          <span class="text-1d"onclick="showPopup()">24°C</span>
+          <span class="text-1d"onclick="showTemp()">24°C</span>
         </div>
         <div class="wrapper-8">
-          <span class="text-20"onclick="showPopup()">16°C</span>
+          <span class="text-20"onclick="showTemp()">16°C</span>
         </div>
         <div class="img-8"></div>
         <div class="img-9"></div>
         <div class="img-a"></div>
         <div class="group-9">
-          <span class="text-23"onclick="showPopup()">26°C</span>
+          <span class="text-23"onclick="showTemp()">26°C</span>
         </div>
         <div class="group-a">
-          <span class="text-26"onclick="showPopup()">25°C</span>
+          <span class="text-26"onclick="showTemp()">25°C</span>
         </div>
         <div class="box-4">
-          <span class="text-29"onclick="showPopup()">27°C</span>
+          <span class="text-29"onclick="showTemp()">27°C</span>
         </div>
         <div class="img-b"></div>
         <div class="img-c"></div>
         <div class="img-d"></div>
         <div class="box-5">
-          <span class="text-2c"onclick="showPopup()">28°C</span>
+          <span class="text-2c"onclick="showTemp()">28°C</span>
         </div>
         <div class="group-b">
-          <span class="text-2f"onclick="showPopup()">29°C</span>
+          <span class="text-2f"onclick="showTemp()">29°C</span>
         </div>
         <div class="section-2">
-          <span class="text-32"onclick="showPopup()">30°C</span>
+          <span class="text-32"onclick="showTemp()">30°C</span>
         </div>
         <span class="text-35">© X-CAMP 2023</span>
       </div>
@@ -163,5 +177,14 @@ function hidePopup() {
       <div class="section-3"></div>
       <div class="box-6"></div>
     </div>
+      <!-- pop up suhu -->
+      <div id="myTemp" class="temp">
+        <body>
+        <div>
+          <button onclick="hideTemp()">Scan</button>
+        </div>
+      </div>
+      </body>
+      <!-- end off pop up suhu  -->
   </body>
 </html>
