@@ -58,59 +58,89 @@
     function scanTemp() {
       var popup = document.getElementById("myPopup");
       popup.style.display = "none";
-     
-         // Get the selected values from the dropdowns
-         var iterasiValue = document.getElementById("iterasiDropdown").value;
-        var delayValue = document.getElementById("delayDropdown").value;
 
-        // Check if the elements were found
-        if (iterasiValue !== null && delayValue !== null) {
-            // You can now use iterasiValue and delayValue as needed
-            console.log("Iterasi Value: " + iterasiValue);
-            console.log("Delay Value: " + delayValue);
+      // Get the selected values from the dropdowns
+      var iterasiValue = document.getElementById("iterasiDropdown").value;
+      var delayValue = document.getElementById("delayDropdown").value;
+      var tempValue = element.textContent.trim();
 
-            // Add your logic to send the values to the server or perform any other action
-        } else {
-            console.error("One or both dropdowns not found");
-        }
-    
+      // Log the value to the console
+      console.log("Temp Value: " + tempValue);
+
+      // Check if the elements were found
+      if (iterasiValue !== null && delayValue !== null) {
+        // You can now use iterasiValue and delayValue as needed
+        console.log("Iterasi Value: " + iterasiValue);
+        console.log("Delay Value: " + delayValue);
+        console.log("Temp Value: " + tempValue);
+
+
+        // Add your logic to send the values to the server or perform any other action
+      } else {
+        console.error("One or both dropdowns not found");
+      }
+
     }
     function hideTemp() {
       var temp = document.getElementById("myTemp");
       temp.style.display = "none";
     }
 
-     function updateTemperature() {
-        // Get the input value
-        var temperatureInput = document.getElementById("temperatureInput").value;
+    function updateTemperature() {
+      // Get the input value
+      var temperatureInput = document.getElementById("temperatureInput").value;
 
-        // Update the displayed temperature
-        var dynamicTemperature = document.getElementById("dynamicTemperature");
-        dynamicTemperature.textContent = temperatureInput + "°C";
+      // Update the displayed temperature
+      var dynamicTemperature = document.getElementById("dynamicTemperature");
+      dynamicTemperature.textContent = temperatureInput + "°C";
     }
 
     function sendTemperature() {
-        // Get the input value
-        var temperatureInput = document.getElementById("temperatureInput").value;
+      // Get the input value
+      var temperatureInput = document.getElementById("temperatureInput").value;
 
-        // Update the displayed temperature
-        var dynamicTemperature = document.getElementById("dynamicTemperature");
-        dynamicTemperature.textContent = temperatureInput + "°C";
+      // Update the displayed temperature
+      var dynamicTemperature = document.getElementById("dynamicTemperature");
+      dynamicTemperature.textContent = temperatureInput + "°C";
 
-        // Send the temperature to Arduino (replace the URL with your Arduino server endpoint)
-        fetch('http://your-arduino-ip-address/update?temperature=' + temperatureInput, {
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json',
-                // Add any additional headers if needed
-            },
-        })
+      // Send the temperature to Arduino (replace the URL with your Arduino server endpoint)
+      fetch('http://your-arduino-ip-address/update?temperature=' + temperatureInput, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          // Add any additional headers if needed
+        },
+      })
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
     }
 
+    function showTemper(element) {
+      if (!element) {
+        console.error("Element is undefined");
+        return;
+      }
+
+      // Rest of your code
+      var nameAttribute = element.getAttribute("name");
+      var typeAttribute = element.getAttribute("type");
+      var valueAttribute = element.getAttribute("value");
+
+      // Logging the attributes in the console
+      console.log("Name Attribute:", nameAttribute);
+      console.log("Type Attribute:", typeAttribute);
+      console.log("Value Attribute:", valueAttribute);
+    }
+
+    function scanTemp() {
+    // Call the showTemper function with a specific element (replace with your actual element)
+    var exampleElement = document.getElementById("tempValue");
+    showTemper(exampleElement);
+    
+    // Additional logic for scanTemp if needed
+  }
   </script>
 </head>
 
@@ -164,7 +194,7 @@
             <!-- Tambahkan opsi sesuai kebutuhan -->
           </select>
           <p>Delay</p>
-          <select class="dropdown" id="delayDropdown" name="temp16" type="text">
+          <select class="dropdown" id="delayDropdown" name="temp" type="text">
             <option value="" disabled selected>--Pilih Waktu Delay--</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -187,7 +217,7 @@
   <button onclick="sendTemperature()">Send to Arduino</button>
 </div>
 <div class="group-4">
-  <span id="dynamicTemperature" class="text-5" onclick="showTemp()">°C</span>
+  <span id="" class="text-5" onclick="showTemp()">50°C</span>
 </div>
 <div class="section">
   <span class="text-8" onclick="showTemp()">17°C</span>
@@ -211,10 +241,10 @@
 <div class="pic-8"></div>
 <div class="pic-9"></div>
 <div class="group-7">
-  <span class="text-17" onclick="showTemp()" name="temp16" type="text" value="16" >°C</span>
+  <span class="text-17" onclick="showTemper(this)" id="tempValue" type="text" value="100">50°C</span>
 </div>
 <div class="group-8">
-  <span class="text-1a" onclick="showTemp()">22°C</span>
+  <span class="text-1a" onclick="showTemp()" id="tempValue">22°C</span>
 </div>
 <div class="wrapper-7">
   <span class="text-1d" onclick="showTemp()">24°C</span>
@@ -226,8 +256,7 @@
 <div class="img-9"></div>
 <div class="img-a"></div>
 <div class="group-9">
-  <span class="text-23"
-   onclick="showTemp()">26°C</span>
+  <span class="text-23" onclick="showTemp()">26°C</span>
 </div>
 <div class="group-a">
   <span class="text-26" onclick="showTemp()">25°C</span>
