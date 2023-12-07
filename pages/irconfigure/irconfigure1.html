@@ -55,20 +55,60 @@
     }
 
     // Fungsi untuk menyembunyikan popup
-    function hidePopup() {
+    function scanTemp() {
       var popup = document.getElementById("myPopup");
       popup.style.display = "none";
-      setTimeout(function () {
-        // Show the success indicator
-        document.getElementById('successIndicator').style.display = 'block';
+     
+         // Get the selected values from the dropdowns
+         var iterasiValue = document.getElementById("iterasiDropdown").value;
+        var delayValue = document.getElementById("delayDropdown").value;
 
-        // Optionally, you can hide the popup after showing the success indicator
-        // document.getElementById('myPopup').style.display = 'none';
-      }, 2000);
+        // Check if the elements were found
+        if (iterasiValue !== null && delayValue !== null) {
+            // You can now use iterasiValue and delayValue as needed
+            console.log("Iterasi Value: " + iterasiValue);
+            console.log("Delay Value: " + delayValue);
+
+            // Add your logic to send the values to the server or perform any other action
+        } else {
+            console.error("One or both dropdowns not found");
+        }
+    
     }
     function hideTemp() {
       var temp = document.getElementById("myTemp");
       temp.style.display = "none";
+    }
+
+     function updateTemperature() {
+        // Get the input value
+        var temperatureInput = document.getElementById("temperatureInput").value;
+
+        // Update the displayed temperature
+        var dynamicTemperature = document.getElementById("dynamicTemperature");
+        dynamicTemperature.textContent = temperatureInput + "°C";
+    }
+
+    function sendTemperature() {
+        // Get the input value
+        var temperatureInput = document.getElementById("temperatureInput").value;
+
+        // Update the displayed temperature
+        var dynamicTemperature = document.getElementById("dynamicTemperature");
+        dynamicTemperature.textContent = temperatureInput + "°C";
+
+        // Send the temperature to Arduino (replace the URL with your Arduino server endpoint)
+        fetch('http://your-arduino-ip-address/update?temperature=' + temperatureInput, {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                // Add any additional headers if needed
+            },
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
     }
 
   </script>
@@ -124,14 +164,14 @@
             <!-- Tambahkan opsi sesuai kebutuhan -->
           </select>
           <p>Delay</p>
-          <select class="dropdown" id="iterasiDropdown">
+          <select class="dropdown" id="delayDropdown" name="temp16" type="text">
             <option value="" disabled selected>--Pilih Waktu Delay--</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
           <div>
-            <button onclick="hidePopup()">Scan</button>
+            <button onclick="scanTemp()">Scan</button>
           </div>
       </div>
 </body>
@@ -140,8 +180,14 @@
 <div class="pic-5"></div>
 <div class="pic-6"></div>
 
+
+<div>
+  <label for="temperatureInput">Input Temperature:</label>
+  <input type="number" id="temperatureInput" placeholder="temperature">
+  <button onclick="sendTemperature()">Send to Arduino</button>
+</div>
 <div class="group-4">
-  <span class="text-5" onclick="showTemp()">16°C</span>
+  <span id="dynamicTemperature" class="text-5" onclick="showTemp()">°C</span>
 </div>
 <div class="section">
   <span class="text-8" onclick="showTemp()">17°C</span>
@@ -165,7 +211,7 @@
 <div class="pic-8"></div>
 <div class="pic-9"></div>
 <div class="group-7">
-  <span class="text-17" onclick="showTemp()">23°C</span>
+  <span class="text-17" onclick="showTemp()" name="temp16" type="text" value="16" >°C</span>
 </div>
 <div class="group-8">
   <span class="text-1a" onclick="showTemp()">22°C</span>
@@ -180,7 +226,8 @@
 <div class="img-9"></div>
 <div class="img-a"></div>
 <div class="group-9">
-  <span class="text-23" onclick="showTemp()">26°C</span>
+  <span class="text-23"
+   onclick="showTemp()">26°C</span>
 </div>
 <div class="group-a">
   <span class="text-26" onclick="showTemp()">25°C</span>
@@ -206,12 +253,17 @@
 <div class="section-3"></div>
 <div class="box-6"></div>
 </div>
+<div>
+  <label for="temperatureInput">Input Temperature:</label>
+  <input type="number" id="temperatureInput" placeholder="temperature">
+  <button onclick="updateTemperature()">Update</button>
+</div>
 <!-- pop up suhu -->
 <div id="myTemp" class="temp">
 
   <body>
     <div>
-      <button onclick="hideTemp()">Scan</button>
+      <button onclick="scanTemp()">Scan</button>
       <!-- Add the success indicator element -->
       <div id="successIndicator">Scan berhasil!</div>
     </div>
