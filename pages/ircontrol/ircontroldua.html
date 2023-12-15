@@ -46,13 +46,27 @@ function showTemp() {
 
 // Fungsi untuk menyembunyikan popup
 function hidePopup() {
-  var popup = document.getElementById("myPopup");
+  var popup = document.getElementById("myPopup","myTemp");
+  document.getElementById('myTemp').style.display = 'block';
+  document.getElementById('myTemp').style.display = 'none';
   popup.style.display = "none";
 }
 function hideTemp() {
-  var temp = document.getElementById("myTemp");
-  temp  .style.display = "none";
-}
+            // Logika untuk menentukan apakah scan berhasil atau gagal
+            var scanSuccess = Math.random() < 0.5; // Misalnya, gunakan angka acak sebagai contoh
+
+            // Tampilkan notifikasi sesuai dengan hasil scan
+            if (scanSuccess) {
+                showNotification('Scan berhasil!');
+            } else {
+                showNotification('Scan gagal. Silakan coba lagi.');
+            }
+        }
+
+        function showNotification(message) {
+            // Tampilkan notifikasi menggunakan alert. Anda dapat menggunakan notifikasi HTML5 yang lebih canggih jika diinginkan.
+            alert(message);
+        }
 
     </script>
   </head>
@@ -72,7 +86,7 @@ function hideTemp() {
         <a href="javascript:history.back()">
           <div class="img-4"></div>
           </a>
-        <span class="text">IR Configure 2</span>
+        <span class="text">Kontrol IR 2</span>
       </div>
       <div class="wrapper-3">
         <div class="wrapper-4"></div>
@@ -81,6 +95,7 @@ function hideTemp() {
         <span class="text-4" onclick="showPopup()">OFF</span>
         <!-- isi Pop up -->
         <div id="myPopup" class="popup">
+          <div class="close" onclick="hidePopup()">X</div>
           <head>
             PARAMETER SETTING
           </head>
@@ -102,7 +117,7 @@ function hideTemp() {
             <option value="3">3</option>
           </select>
           <div>
-            <button onclick="hidePopup()">Scan</button>
+            <button onclick="hideTemp()">Scan</button>
           </div>
         </div>
         </body>
@@ -180,6 +195,8 @@ function hideTemp() {
       <!-- pop up suhu -->
       <div id="myTemp" class="temp">
         <body>
+          <button onclick="hidePopup()">Close</button>
+          
         <div>
           <button onclick="hideTemp()">Scan</button>
         </div>

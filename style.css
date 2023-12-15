@@ -20,73 +20,7 @@
   margin: 0 0 0 0;
   z-index: 26;
 }
-.group {
-  position: absolute;
-  width: 360px;
-  height: 42px;
-  top: 0;
-  left: 0;
-  z-index: 16;
-}
 
-.box-2 {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  top: 12px;
-  left: 242px;
-  z-index: 18;
-  overflow: hidden;
-}
-.pic-2 {
-  position: relative;
-  width: 15px;
-  height: 15px;
-  margin: 1.5px 0 0 1.5px;
-  background: url()
-    no-repeat center;
-  background-size: cover;
-  z-index: 19;
-}
-.section {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  top: 12px;
-  left: 263px;
-  z-index: 24;
-  overflow: hidden;
-}
-
-.box-3 {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  top: 12px;
-  left: 284px;
-  z-index: 22;
-  overflow: hidden;
-}
-
-.box-4 {
-  position: absolute;
-  width: 5%;
-  height: 53.57%;
-  top: 35.71%;
-  left: 84.72%;
-  z-index: 20;
-  overflow: hidden;
-}
-
-.group-2 {
-  position: absolute;
-  width: 5%;
-  height: 53.57%;
-  top: 35.71%;
-  left: 90.56%;
-  z-index: 26;
-  overflow: hidden;
-}
 
 .text {
   display: inline-block;
