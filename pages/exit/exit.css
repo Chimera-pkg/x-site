@@ -1,0 +1,159 @@
+.timer {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.timer .div {
+  background-color: #fafafa;
+  width: 360px;
+  height: 800px;
+  position: relative;
+}
+
+.timer .overlap {
+  position: absolute;
+  width: 360px;
+  height: 125px;
+  top: 0;
+  left: 0;
+  border-radius: 0px 0px 10px 10px;
+  background: linear-gradient(180deg, rgba(0, 218, 178, 0.7) 0%, rgba(0, 205, 249, 0.7) 100%);
+}
+
+.timer .text-wrapper {
+  position: absolute;
+  height: 21px;
+  top: 71px;
+  left: 153px;
+  font-family: "Nunito Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.timer .icon-arrow-back {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 65px;
+  left: 30px;
+}
+
+.timer .text-wrapper-2 {
+  position: absolute;
+  top: 763px;
+  left: 127px;
+  font-family: "Nunito Sans-Light", Helvetica;
+  font-weight: 300;
+  color: #7c7c7c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.timer .overlap-group {
+  position: absolute;
+  width: 225px;
+  height: 45px;
+  top: 335px;
+  left: 68px;
+}
+
+.timer .text {
+  position: absolute;
+  height: 33px;
+  top: 0;
+  left: 67px;
+  font-family: "Nunito Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.timer .group {
+  top: 5px;
+  left: 0;
+  position: absolute;
+  width: 225px;
+  height: 40px;
+}
+
+.timer .div-wrapper {
+  position: relative;
+  width: 223px;
+  height: 40px;
+  background-color: #e9fbff;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #d9d9d9;
+}
+
+.timer .text-wrapper-3 {
+  position: absolute;
+  height: 22px;
+  top: 8px;
+  left: 79px;
+  font-family: "Nunito Sans-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.timer .overlap-group-wrapper {
+  top: 223px;
+  left: 68px;
+  position: absolute;
+  width: 225px;
+  height: 40px;
+}
+
+.timer .text-wrapper-4 {
+  position: absolute;
+  height: 22px;
+  top: 8px;
+  left: 13px;
+  font-family: "Nunito Sans-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.timer .overlap-wrapper {
+  top: 280px;
+  left: 68px;
+  position: absolute;
+  width: 225px;
+  height: 40px;
+}
+
+.timer .text-wrapper-5 {
+  position: absolute;
+  height: 22px;
+  top: 8px;
+  left: 17px;
+  font-family: "Nunito Sans-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+  

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>X-Site</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700;800&display=swap" />
     <link rel="stylesheet" href="resetctrl.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -82,27 +82,17 @@ function hideTemp() {
         <!-- isi Pop up -->
         <div id="myPopup" class="popup">
           <head>
-            PARAMETER SETTING
+            <h3>
+              Apakah anda yakin ingin menghapus?
+
+            </h1>
           </head>
           <body>
-
-          <p>Iterasi</p>
-          <select class="dropdown" id="iterasiDropdown">
-            <option value="" disabled selected>--Pilih Jumlah Iterasi--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <!-- Tambahkan opsi sesuai kebutuhan -->
-          </select>
-          <p>Delay</p>
-          <select class="dropdown" id="iterasiDropdown">
-            <option value="" disabled selected>--Pilih Waktu Delay--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
           <div>
-            <button onclick="hidePopup()">Scan</button>
+            <button onclick="hidePopup()">Iya</button>
+          </div>
+          <div>
+            <button onclick="hidePopup()">Tidak</button>
           </div>
         </div>
         </body>
